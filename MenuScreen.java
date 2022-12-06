@@ -153,6 +153,9 @@ public class MenuScreen extends javax.swing.JFrame {
         });
         jPanel2.add(baguetteRBTN);
         baguetteRBTN.setBounds(40, 180, 80, 20);
+
+        baguetteQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
+        baguetteQTY.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.add(baguetteQTY);
         baguetteQTY.setBounds(140, 180, 50, 20);
 
@@ -165,6 +168,8 @@ public class MenuScreen extends javax.swing.JFrame {
         });
         jPanel2.add(croissantRBTN);
         croissantRBTN.setBounds(220, 180, 80, 20);
+
+        croissantQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
         jPanel2.add(croissantQTY);
         croissantQTY.setBounds(320, 180, 50, 20);
 
@@ -177,8 +182,12 @@ public class MenuScreen extends javax.swing.JFrame {
         });
         jPanel2.add(goldleafRBTN);
         goldleafRBTN.setBounds(40, 320, 80, 20);
+
+        goldleafQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
         jPanel2.add(goldleafQTY);
         goldleafQTY.setBounds(140, 320, 50, 20);
+
+        sourdoughQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
         jPanel2.add(sourdoughQTY);
         sourdoughQTY.setBounds(320, 320, 50, 20);
 
