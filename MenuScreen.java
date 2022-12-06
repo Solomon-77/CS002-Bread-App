@@ -70,12 +70,8 @@ public class MenuScreen extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         baguetteRBTN = new javax.swing.JRadioButton();
-        baguetteQTY = new javax.swing.JSpinner();
         croissantRBTN = new javax.swing.JRadioButton();
-        croissantQTY = new javax.swing.JSpinner();
         goldleafRBTN = new javax.swing.JRadioButton();
-        goldleafQTY = new javax.swing.JSpinner();
-        sourdoughQTY = new javax.swing.JSpinner();
         sourdoughRBTN = new javax.swing.JRadioButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -83,12 +79,16 @@ public class MenuScreen extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         logoutBTN = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
+        baguetteQTY = new javax.swing.JSpinner();
+        croissantQTY = new javax.swing.JSpinner();
+        sourdoughQTY = new javax.swing.JSpinner();
+        goldleafQTY = new javax.swing.JSpinner();
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         totalBALANCE = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        addBalance = new javax.swing.JPanel();
+        addBalanceSCREEN = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         cartBTN = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -112,29 +112,30 @@ public class MenuScreen extends javax.swing.JFrame {
         closeBTN.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         closeBTN.setForeground(java.awt.Color.white);
         closeBTN.setText("x");
+        closeBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         closeBTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeBTNMouseClicked(evt);
             }
         });
         jPanel2.add(closeBTN);
-        closeBTN.setBounds(390, 7, 18, 17);
+        closeBTN.setBounds(380, 0, 30, 30);
 
         jPanel4.setBackground(new java.awt.Color(187, 89, 26));
         jPanel4.setForeground(new java.awt.Color(187, 89, 26));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setForeground(java.awt.Color.white);
-        jLabel7.setText("Bread Menu");
+        jLabel7.setText("BREAD MENU");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(76, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(59, 59, 59)
                 .addComponent(jLabel7)
-                .addGap(73, 73, 73))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,64 +143,51 @@ public class MenuScreen extends javax.swing.JFrame {
         );
 
         jPanel2.add(jPanel4);
-        jPanel4.setBounds(40, 40, 230, 20);
+        jPanel4.setBounds(40, 30, 210, 30);
 
         baguetteRBTN.setForeground(java.awt.Color.white);
         baguetteRBTN.setText("Baguette");
+        baguetteRBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         baguetteRBTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 baguetteRBTNMouseClicked(evt);
             }
         });
         jPanel2.add(baguetteRBTN);
-        baguetteRBTN.setBounds(40, 180, 80, 20);
-
-        baguetteQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
-        baguetteQTY.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanel2.add(baguetteQTY);
-        baguetteQTY.setBounds(140, 180, 50, 20);
+        baguetteRBTN.setBounds(40, 180, 80, 21);
 
         croissantRBTN.setForeground(java.awt.Color.white);
         croissantRBTN.setText("Croissant");
+        croissantRBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         croissantRBTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 croissantRBTNMouseClicked(evt);
             }
         });
         jPanel2.add(croissantRBTN);
-        croissantRBTN.setBounds(220, 180, 80, 20);
-
-        croissantQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
-        jPanel2.add(croissantQTY);
-        croissantQTY.setBounds(320, 180, 50, 20);
+        croissantRBTN.setBounds(220, 180, 80, 21);
 
         goldleafRBTN.setForeground(java.awt.Color.white);
         goldleafRBTN.setText("Gold Leaf");
+        goldleafRBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         goldleafRBTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 goldleafRBTNMouseClicked(evt);
             }
         });
         jPanel2.add(goldleafRBTN);
-        goldleafRBTN.setBounds(40, 320, 80, 20);
-
-        goldleafQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
-        jPanel2.add(goldleafQTY);
-        goldleafQTY.setBounds(140, 320, 50, 20);
-
-        sourdoughQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
-        jPanel2.add(sourdoughQTY);
-        sourdoughQTY.setBounds(320, 320, 50, 20);
+        goldleafRBTN.setBounds(40, 320, 80, 21);
 
         sourdoughRBTN.setForeground(java.awt.Color.white);
         sourdoughRBTN.setText("Sourdough");
+        sourdoughRBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         sourdoughRBTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sourdoughRBTNMouseClicked(evt);
             }
         });
         jPanel2.add(sourdoughRBTN);
-        sourdoughRBTN.setBounds(220, 320, 90, 20);
+        sourdoughRBTN.setBounds(220, 320, 90, 21);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/rsz_sourdough.jpg"))); // NOI18N
         jLabel9.setText("jLabel9");
@@ -223,6 +211,7 @@ public class MenuScreen extends javax.swing.JFrame {
 
         logoutBTN.setBackground(new java.awt.Color(187, 89, 26));
         logoutBTN.setForeground(new java.awt.Color(187, 89, 26));
+        logoutBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         logoutBTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logoutBTNMouseClicked(evt);
@@ -240,17 +229,36 @@ public class MenuScreen extends javax.swing.JFrame {
             .addGroup(logoutBTNLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel8)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         logoutBTNLayout.setVerticalGroup(
             logoutBTNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, logoutBTNLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel8))
+            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         jPanel2.add(logoutBTN);
-        logoutBTN.setBounds(280, 40, 90, 20);
+        logoutBTN.setBounds(270, 30, 100, 30);
+
+        baguetteQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
+        baguetteQTY.setBorder(null);
+        baguetteQTY.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel2.add(baguetteQTY);
+        baguetteQTY.setBounds(130, 180, 60, 30);
+
+        croissantQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
+        croissantQTY.setBorder(null);
+        jPanel2.add(croissantQTY);
+        croissantQTY.setBounds(310, 180, 60, 30);
+
+        sourdoughQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
+        sourdoughQTY.setBorder(null);
+        jPanel2.add(sourdoughQTY);
+        sourdoughQTY.setBounds(310, 320, 60, 30);
+
+        goldleafQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
+        goldleafQTY.setBorder(null);
+        jPanel2.add(goldleafQTY);
+        goldleafQTY.setBounds(130, 320, 60, 30);
 
         jPanel3.setBackground(java.awt.Color.white);
 
@@ -258,6 +266,7 @@ public class MenuScreen extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(40, 40, 61));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 17)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Total Balance");
 
         totalBALANCE.setFont(new java.awt.Font("Segoe UI", 1, 34)); // NOI18N
@@ -291,29 +300,41 @@ public class MenuScreen extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setText("Welcome");
 
-        addBalance.setBackground(new java.awt.Color(187, 89, 26));
-        addBalance.setForeground(new java.awt.Color(187, 89, 26));
+        addBalanceSCREEN.setBackground(new java.awt.Color(187, 89, 26));
+        addBalanceSCREEN.setForeground(new java.awt.Color(187, 89, 26));
+        addBalanceSCREEN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addBalanceSCREEN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addBalanceSCREENMouseClicked(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(java.awt.Color.white);
         jLabel4.setText("ADD BALANCE");
 
-        javax.swing.GroupLayout addBalanceLayout = new javax.swing.GroupLayout(addBalance);
-        addBalance.setLayout(addBalanceLayout);
-        addBalanceLayout.setHorizontalGroup(
-            addBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addBalanceLayout.createSequentialGroup()
+        javax.swing.GroupLayout addBalanceSCREENLayout = new javax.swing.GroupLayout(addBalanceSCREEN);
+        addBalanceSCREEN.setLayout(addBalanceSCREENLayout);
+        addBalanceSCREENLayout.setHorizontalGroup(
+            addBalanceSCREENLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addBalanceSCREENLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel4)
                 .addContainerGap(16, Short.MAX_VALUE))
         );
-        addBalanceLayout.setVerticalGroup(
-            addBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        addBalanceSCREENLayout.setVerticalGroup(
+            addBalanceSCREENLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
         );
 
         cartBTN.setBackground(new java.awt.Color(187, 89, 26));
         cartBTN.setForeground(new java.awt.Color(187, 89, 26));
+        cartBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cartBTN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cartBTNMouseClicked(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(java.awt.Color.white);
@@ -335,6 +356,7 @@ public class MenuScreen extends javax.swing.JFrame {
 
         checkoutBTN.setBackground(new java.awt.Color(187, 89, 26));
         checkoutBTN.setForeground(new java.awt.Color(187, 89, 26));
+        checkoutBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         checkoutBTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 checkoutBTNMouseClicked(evt);
@@ -376,11 +398,11 @@ public class MenuScreen extends javax.swing.JFrame {
                         .addGap(60, 60, 60))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(userName)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(cartBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(checkoutBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(addBalance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(addBalanceSCREEN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(userName))
                         .addGap(28, 28, 28))))
         );
         jPanel3Layout.setVerticalGroup(
@@ -391,8 +413,8 @@ public class MenuScreen extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(userName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addComponent(addBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addComponent(addBalanceSCREEN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(cartBTN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -407,12 +429,12 @@ public class MenuScreen extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -467,6 +489,18 @@ public class MenuScreen extends javax.swing.JFrame {
             croissantDisable();
         }
     }//GEN-LAST:event_croissantRBTNMouseClicked
+
+    private void addBalanceSCREENMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBalanceSCREENMouseClicked
+        AddBalancePOPUP add = new AddBalancePOPUP();
+        add.show();
+        this.setVisible(false);
+    }//GEN-LAST:event_addBalanceSCREENMouseClicked
+
+    private void cartBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartBTNMouseClicked
+        CartPOPUP cart = new CartPOPUP();
+        cart.show();
+        this.setVisible(false);
+    }//GEN-LAST:event_cartBTNMouseClicked
     
     /**
      * @param args the command line arguments
@@ -504,7 +538,7 @@ public class MenuScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel addBalance;
+    private javax.swing.JPanel addBalanceSCREEN;
     private javax.swing.JSpinner baguetteQTY;
     private javax.swing.JRadioButton baguetteRBTN;
     private javax.swing.JPanel cartBTN;

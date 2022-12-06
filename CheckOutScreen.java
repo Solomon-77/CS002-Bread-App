@@ -59,6 +59,7 @@ public class CheckOutScreen extends javax.swing.JFrame {
         closeBTN.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         closeBTN.setForeground(java.awt.Color.white);
         closeBTN.setText("x");
+        closeBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         closeBTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeBTNMouseClicked(evt);
@@ -87,6 +88,7 @@ public class CheckOutScreen extends javax.swing.JFrame {
         jPanel2.add(voucherCODE);
         voucherCODE.setBounds(40, 40, 100, 20);
 
+        addonCHEESE.setForeground(java.awt.Color.white);
         addonCHEESE.setText("Extra-Cheese");
         addonCHEESE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -94,12 +96,14 @@ public class CheckOutScreen extends javax.swing.JFrame {
             }
         });
         jPanel2.add(addonCHEESE);
-        addonCHEESE.setBounds(110, 70, 92, 20);
+        addonCHEESE.setBounds(110, 70, 100, 21);
 
+        addonMAYO.setForeground(java.awt.Color.white);
         addonMAYO.setText("Extra-Mayo");
         jPanel2.add(addonMAYO);
-        addonMAYO.setBounds(210, 70, 98, 20);
+        addonMAYO.setBounds(210, 70, 98, 21);
 
+        jLabel1.setForeground(java.awt.Color.white);
         jLabel1.setText("Add-Ons:");
         jPanel2.add(jLabel1);
         jLabel1.setBounds(40, 70, 60, 20);
@@ -115,6 +119,7 @@ public class CheckOutScreen extends javax.swing.JFrame {
 
         backBTN.setBackground(new java.awt.Color(187, 89, 26));
         backBTN.setForeground(new java.awt.Color(187, 89, 26));
+        backBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backBTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 backBTNMouseClicked(evt);

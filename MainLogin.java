@@ -52,6 +52,7 @@ public class MainLogin extends javax.swing.JFrame {
         closeBTN.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         closeBTN.setForeground(java.awt.Color.white);
         closeBTN.setText("x");
+        closeBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         closeBTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 closeBTNMouseClicked(evt);
@@ -98,6 +99,7 @@ public class MainLogin extends javax.swing.JFrame {
 
         loginBTN.setBackground(new java.awt.Color(187, 89, 26));
         loginBTN.setForeground(new java.awt.Color(187, 89, 26));
+        loginBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         loginBTN.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 loginBTNMouseClicked(evt);
