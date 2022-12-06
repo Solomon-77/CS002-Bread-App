@@ -94,11 +94,11 @@ public class CheckOutScreen extends javax.swing.JFrame {
             }
         });
         jPanel2.add(addonCHEESE);
-        addonCHEESE.setBounds(110, 70, 92, 21);
+        addonCHEESE.setBounds(110, 70, 92, 20);
 
         addonMAYO.setText("Extra-Mayo");
         jPanel2.add(addonMAYO);
-        addonMAYO.setBounds(210, 70, 98, 21);
+        addonMAYO.setBounds(210, 70, 98, 20);
 
         jLabel1.setText("Add-Ons:");
         jPanel2.add(jLabel1);
@@ -115,6 +115,11 @@ public class CheckOutScreen extends javax.swing.JFrame {
 
         backBTN.setBackground(new java.awt.Color(187, 89, 26));
         backBTN.setForeground(new java.awt.Color(187, 89, 26));
+        backBTN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                backBTNMouseClicked(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(java.awt.Color.white);
@@ -135,7 +140,6 @@ public class CheckOutScreen extends javax.swing.JFrame {
         );
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setForeground(java.awt.Color.black);
         jLabel2.setText("Total Amount Due:");
 
         totalAMOUNT.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -221,6 +225,12 @@ public class CheckOutScreen extends javax.swing.JFrame {
     private void addonCHEESEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addonCHEESEActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_addonCHEESEActionPerformed
+
+    private void backBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBTNMouseClicked
+        MenuScreen menu = new MenuScreen();
+        menu.show();
+        this.dispose();
+    }//GEN-LAST:event_backBTNMouseClicked
 
     /**
      * @param args the command line arguments

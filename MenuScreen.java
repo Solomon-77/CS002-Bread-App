@@ -108,21 +108,21 @@ public class MenuScreen extends javax.swing.JFrame {
         baguetteRBTN.setForeground(java.awt.Color.white);
         baguetteRBTN.setText("Baguette");
         jPanel2.add(baguetteRBTN);
-        baguetteRBTN.setBounds(40, 180, 80, 21);
+        baguetteRBTN.setBounds(40, 180, 80, 20);
         jPanel2.add(baguetteQTY);
         baguetteQTY.setBounds(140, 180, 50, 20);
 
         croissantRBTN.setForeground(java.awt.Color.white);
         croissantRBTN.setText("Croissant");
         jPanel2.add(croissantRBTN);
-        croissantRBTN.setBounds(220, 180, 80, 21);
+        croissantRBTN.setBounds(220, 180, 80, 20);
         jPanel2.add(croissantQTY);
         croissantQTY.setBounds(320, 180, 50, 20);
 
         goldleafRBTN.setForeground(java.awt.Color.white);
         goldleafRBTN.setText("Gold Leaf");
         jPanel2.add(goldleafRBTN);
-        goldleafRBTN.setBounds(40, 320, 80, 21);
+        goldleafRBTN.setBounds(40, 320, 80, 20);
         jPanel2.add(goldleafQTY);
         goldleafQTY.setBounds(140, 320, 50, 20);
         jPanel2.add(sourdoughQTY);
@@ -131,7 +131,7 @@ public class MenuScreen extends javax.swing.JFrame {
         sourdoughRBTN.setForeground(java.awt.Color.white);
         sourdoughRBTN.setText("Sourdough");
         jPanel2.add(sourdoughRBTN);
-        sourdoughRBTN.setBounds(220, 320, 90, 21);
+        sourdoughRBTN.setBounds(220, 320, 90, 20);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/rsz_sourdough.jpg"))); // NOI18N
         jLabel9.setText("jLabel9");
@@ -155,6 +155,11 @@ public class MenuScreen extends javax.swing.JFrame {
 
         logoutBTN.setBackground(new java.awt.Color(187, 89, 26));
         logoutBTN.setForeground(new java.awt.Color(187, 89, 26));
+        logoutBTN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutBTNMouseClicked(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setForeground(java.awt.Color.white);
@@ -216,7 +221,6 @@ public class MenuScreen extends javax.swing.JFrame {
         );
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(java.awt.Color.black);
         jLabel3.setText("Welcome");
 
         addBalance.setBackground(new java.awt.Color(187, 89, 26));
@@ -263,6 +267,11 @@ public class MenuScreen extends javax.swing.JFrame {
 
         checkoutBTN.setBackground(new java.awt.Color(187, 89, 26));
         checkoutBTN.setForeground(new java.awt.Color(187, 89, 26));
+        checkoutBTN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkoutBTNMouseClicked(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setForeground(java.awt.Color.white);
@@ -345,6 +354,18 @@ public class MenuScreen extends javax.swing.JFrame {
     private void closeBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeBTNMouseClicked
         System.exit(0);
     }//GEN-LAST:event_closeBTNMouseClicked
+
+    private void checkoutBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkoutBTNMouseClicked
+        CheckOutScreen check = new CheckOutScreen();
+        check.show();
+        this.dispose();
+    }//GEN-LAST:event_checkoutBTNMouseClicked
+
+    private void logoutBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBTNMouseClicked
+        MainLogin log = new MainLogin();
+        log.show();
+        this.dispose();
+    }//GEN-LAST:event_logoutBTNMouseClicked
 
     /**
      * @param args the command line arguments
