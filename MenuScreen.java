@@ -1,3 +1,6 @@
+
+import javax.swing.ButtonGroup;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -9,11 +12,47 @@
  */
 public class MenuScreen extends javax.swing.JFrame {
 
+    // Enable
+    public void baggueteEnable(){
+        baguetteQTY.setEnabled(true);
+    }
+    
+    public void croissantEnable(){
+        croissantQTY.setEnabled(true);
+    }
+    
+    public void goldleafEnable(){
+        goldleafQTY.setEnabled(true);
+    }
+    public void sourdoughEnable(){
+        sourdoughQTY.setEnabled(true);
+    }
+    
+    //Disable
+    public void baggueteDisable(){
+        baguetteQTY.setEnabled(false);
+    }
+    
+    public void croissantDisable(){
+        croissantQTY.setEnabled(false);
+    }
+    
+    public void goldleafDisable(){
+        goldleafQTY.setEnabled(false);
+    }
+    public void sourdoughDisable(){
+        sourdoughQTY.setEnabled(false);
+    }
+
     /**
      * Creates new form MainLogin
      */
     public MenuScreen() {
         initComponents();
+        baguetteQTY.setEnabled(false);
+        croissantQTY.setEnabled(false);
+        goldleafQTY.setEnabled(false);
+        sourdoughQTY.setEnabled(false);  
     }
 
     /**
@@ -107,6 +146,11 @@ public class MenuScreen extends javax.swing.JFrame {
 
         baguetteRBTN.setForeground(java.awt.Color.white);
         baguetteRBTN.setText("Baguette");
+        baguetteRBTN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                baguetteRBTNMouseClicked(evt);
+            }
+        });
         jPanel2.add(baguetteRBTN);
         baguetteRBTN.setBounds(40, 180, 80, 20);
         jPanel2.add(baguetteQTY);
@@ -114,6 +158,11 @@ public class MenuScreen extends javax.swing.JFrame {
 
         croissantRBTN.setForeground(java.awt.Color.white);
         croissantRBTN.setText("Croissant");
+        croissantRBTN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                croissantRBTNMouseClicked(evt);
+            }
+        });
         jPanel2.add(croissantRBTN);
         croissantRBTN.setBounds(220, 180, 80, 20);
         jPanel2.add(croissantQTY);
@@ -121,6 +170,11 @@ public class MenuScreen extends javax.swing.JFrame {
 
         goldleafRBTN.setForeground(java.awt.Color.white);
         goldleafRBTN.setText("Gold Leaf");
+        goldleafRBTN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                goldleafRBTNMouseClicked(evt);
+            }
+        });
         jPanel2.add(goldleafRBTN);
         goldleafRBTN.setBounds(40, 320, 80, 20);
         jPanel2.add(goldleafQTY);
@@ -130,6 +184,11 @@ public class MenuScreen extends javax.swing.JFrame {
 
         sourdoughRBTN.setForeground(java.awt.Color.white);
         sourdoughRBTN.setText("Sourdough");
+        sourdoughRBTN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sourdoughRBTNMouseClicked(evt);
+            }
+        });
         jPanel2.add(sourdoughRBTN);
         sourdoughRBTN.setBounds(220, 320, 90, 20);
 
@@ -367,6 +426,39 @@ public class MenuScreen extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_logoutBTNMouseClicked
 
+    private void baguetteRBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_baguetteRBTNMouseClicked
+        if (baguetteRBTN.isSelected()){
+            baggueteEnable();
+        } else {
+            baggueteDisable();
+        }
+       
+    }//GEN-LAST:event_baguetteRBTNMouseClicked
+
+    private void goldleafRBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_goldleafRBTNMouseClicked
+        if (goldleafRBTN.isSelected()){
+            goldleafEnable();
+        } else {
+            goldleafDisable();
+        }
+    }//GEN-LAST:event_goldleafRBTNMouseClicked
+
+    private void sourdoughRBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sourdoughRBTNMouseClicked
+        if (sourdoughRBTN.isSelected()){
+            sourdoughEnable();
+        } else {
+            sourdoughDisable();
+        }
+    }//GEN-LAST:event_sourdoughRBTNMouseClicked
+
+    private void croissantRBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_croissantRBTNMouseClicked
+        if (croissantRBTN.isSelected()){
+            croissantEnable();
+        } else {
+            croissantDisable();
+        }
+    }//GEN-LAST:event_croissantRBTNMouseClicked
+    
     /**
      * @param args the command line arguments
      */
