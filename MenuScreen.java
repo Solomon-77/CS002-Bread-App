@@ -83,6 +83,10 @@ public class MenuScreen extends javax.swing.JFrame {
         croissantQTY = new javax.swing.JSpinner();
         sourdoughQTY = new javax.swing.JSpinner();
         goldleafQTY = new javax.swing.JSpinner();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -94,7 +98,7 @@ public class MenuScreen extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         checkoutBTN = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        userName = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
 
         jToggleButton1.setText("jToggleButton1");
 
@@ -145,6 +149,7 @@ public class MenuScreen extends javax.swing.JFrame {
         jPanel2.add(jPanel4);
         jPanel4.setBounds(40, 30, 210, 30);
 
+        baguetteRBTN.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         baguetteRBTN.setForeground(java.awt.Color.white);
         baguetteRBTN.setText("Baguette");
         baguetteRBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -156,6 +161,7 @@ public class MenuScreen extends javax.swing.JFrame {
         jPanel2.add(baguetteRBTN);
         baguetteRBTN.setBounds(40, 180, 80, 21);
 
+        croissantRBTN.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         croissantRBTN.setForeground(java.awt.Color.white);
         croissantRBTN.setText("Croissant");
         croissantRBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -167,6 +173,7 @@ public class MenuScreen extends javax.swing.JFrame {
         jPanel2.add(croissantRBTN);
         croissantRBTN.setBounds(220, 180, 80, 21);
 
+        goldleafRBTN.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         goldleafRBTN.setForeground(java.awt.Color.white);
         goldleafRBTN.setText("Gold Leaf");
         goldleafRBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -176,8 +183,9 @@ public class MenuScreen extends javax.swing.JFrame {
             }
         });
         jPanel2.add(goldleafRBTN);
-        goldleafRBTN.setBounds(40, 320, 80, 21);
+        goldleafRBTN.setBounds(40, 330, 80, 21);
 
+        sourdoughRBTN.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         sourdoughRBTN.setForeground(java.awt.Color.white);
         sourdoughRBTN.setText("Sourdough");
         sourdoughRBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -187,12 +195,12 @@ public class MenuScreen extends javax.swing.JFrame {
             }
         });
         jPanel2.add(sourdoughRBTN);
-        sourdoughRBTN.setBounds(220, 320, 90, 21);
+        sourdoughRBTN.setBounds(220, 330, 90, 21);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/rsz_sourdough.jpg"))); // NOI18N
         jLabel9.setText("jLabel9");
         jPanel2.add(jLabel9);
-        jLabel9.setBounds(220, 220, 150, 90);
+        jLabel9.setBounds(220, 230, 150, 90);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/rsz_baguette.jpg"))); // NOI18N
         jLabel10.setText("jLabel9");
@@ -207,7 +215,7 @@ public class MenuScreen extends javax.swing.JFrame {
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics/rsz_gold.jpg"))); // NOI18N
         jLabel12.setText("jLabel9");
         jPanel2.add(jLabel12);
-        jLabel12.setBounds(40, 220, 150, 90);
+        jLabel12.setBounds(40, 230, 150, 90);
 
         logoutBTN.setBackground(new java.awt.Color(187, 89, 26));
         logoutBTN.setForeground(new java.awt.Color(187, 89, 26));
@@ -243,22 +251,46 @@ public class MenuScreen extends javax.swing.JFrame {
         baguetteQTY.setBorder(null);
         baguetteQTY.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.add(baguetteQTY);
-        baguetteQTY.setBounds(130, 180, 60, 30);
+        baguetteQTY.setBounds(140, 180, 50, 30);
 
         croissantQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
         croissantQTY.setBorder(null);
         jPanel2.add(croissantQTY);
-        croissantQTY.setBounds(310, 180, 60, 30);
+        croissantQTY.setBounds(320, 180, 50, 30);
 
         sourdoughQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
         sourdoughQTY.setBorder(null);
         jPanel2.add(sourdoughQTY);
-        sourdoughQTY.setBounds(310, 320, 60, 30);
+        sourdoughQTY.setBounds(320, 330, 50, 30);
 
         goldleafQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
         goldleafQTY.setBorder(null);
         jPanel2.add(goldleafQTY);
-        goldleafQTY.setBounds(130, 320, 60, 30);
+        goldleafQTY.setBounds(140, 330, 50, 30);
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setText("P100");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(40, 200, 30, 16);
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel13.setText("P98");
+        jPanel2.add(jLabel13);
+        jLabel13.setBounds(220, 200, 21, 16);
+
+        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel14.setText("P75");
+        jPanel2.add(jLabel14);
+        jLabel14.setBounds(220, 350, 21, 16);
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel15.setText("P450");
+        jPanel2.add(jLabel15);
+        jLabel15.setBounds(40, 350, 28, 16);
 
         jPanel3.setBackground(java.awt.Color.white);
 
@@ -298,6 +330,7 @@ public class MenuScreen extends javax.swing.JFrame {
         );
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(java.awt.Color.black);
         jLabel3.setText("Welcome");
 
         addBalanceSCREEN.setBackground(new java.awt.Color(187, 89, 26));
@@ -320,7 +353,7 @@ public class MenuScreen extends javax.swing.JFrame {
             .addGroup(addBalanceSCREENLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel4)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         addBalanceSCREENLayout.setVerticalGroup(
             addBalanceSCREENLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -381,9 +414,9 @@ public class MenuScreen extends javax.swing.JFrame {
             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
         );
 
-        userName.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        userName.setForeground(java.awt.Color.red);
-        userName.setText("[footlongusername]");
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(40, 40, 61));
+        jLabel16.setText("[footlongusername]");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -397,12 +430,11 @@ public class MenuScreen extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addGap(60, 60, 60))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(cartBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(checkoutBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(addBalanceSCREEN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(userName))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cartBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(checkoutBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(addBalanceSCREEN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(28, 28, 28))))
         );
         jPanel3Layout.setVerticalGroup(
@@ -411,9 +443,9 @@ public class MenuScreen extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(userName)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addComponent(addBalanceSCREEN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(cartBTN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -552,6 +584,11 @@ public class MenuScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -568,6 +605,5 @@ public class MenuScreen extends javax.swing.JFrame {
     private javax.swing.JSpinner sourdoughQTY;
     private javax.swing.JRadioButton sourdoughRBTN;
     private javax.swing.JLabel totalBALANCE;
-    private javax.swing.JLabel userName;
     // End of variables declaration//GEN-END:variables
 }
