@@ -1,1 +1,1 @@
-# cs002-gui
+# .forms file for netbeans IDE
