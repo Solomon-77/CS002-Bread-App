@@ -416,7 +416,7 @@ public class MenuScreen extends javax.swing.JFrame {
 
         menuUSER.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         menuUSER.setForeground(new java.awt.Color(40, 40, 61));
-        menuUSER.setText("");
+        menuUSER.setText(MainLogin.user.getText());
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -480,8 +480,8 @@ public class MenuScreen extends javax.swing.JFrame {
 
     private void checkoutBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkoutBTNMouseClicked
         CheckOutScreen check = new CheckOutScreen();
-        check.show();
-        this.dispose();
+        check.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_checkoutBTNMouseClicked
 
     private void logoutBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBTNMouseClicked

@@ -234,8 +234,8 @@ public class CheckOutScreen extends javax.swing.JFrame {
 
     private void backBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBTNMouseClicked
         MenuScreen menu = new MenuScreen();
-        menu.show();
-        this.dispose();
+        menu.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_backBTNMouseClicked
 
     /**

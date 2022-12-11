@@ -254,7 +254,6 @@ public class MainLogin extends javax.swing.JFrame {
             if (credential.username.equals(username) && credential.password.equals(password)) {
                 MenuScreen menu = new MenuScreen();
                 menu.show();
-                menu.menuUSER.setText(username);
                 this.setVisible(false);
             }
         }
