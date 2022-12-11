@@ -1,12 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+import java.util.*;
+import javax.swing.*;
 
-/**
- *
- * @author Eustaquio
- */
 public class MainLogin extends javax.swing.JFrame {
 
     /**
@@ -14,6 +8,17 @@ public class MainLogin extends javax.swing.JFrame {
      */
     public MainLogin() {
         initComponents();
+    }
+    private ArrayList<Credential> validCredentials = new ArrayList<>();
+    
+    private class Credential {
+        private String username;
+        private String password;
+
+        public Credential(String username, String password) {
+            this.username = username;
+            this.password = password;
+        }
     }
 
     /**
@@ -80,6 +85,12 @@ public class MainLogin extends javax.swing.JFrame {
 
         registerBTN.setForeground(new java.awt.Color(187, 89, 26));
         registerBTN.setText("Register Now");
+        registerBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        registerBTN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                registerBTNMouseClicked(evt);
+            }
+        });
 
         pass.setBackground(new java.awt.Color(49, 52, 52));
         pass.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -235,10 +246,28 @@ public class MainLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_passActionPerformed
 
     private void loginBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBTNMouseClicked
-        MenuScreen menu = new MenuScreen();
-        menu.show();
-        this.dispose();
+        String username = user.getText();
+        String password = pass.getText();
+
+        // Check if the entered username and password are valid
+        for (Credential credential : validCredentials) {
+            if (credential.username.equals(username) && credential.password.equals(password)) {
+                MenuScreen menu = new MenuScreen();
+                menu.show();
+                menu.menuUSER.setText(username);
+                this.setVisible(false);
+            }
+        }
     }//GEN-LAST:event_loginBTNMouseClicked
+
+    private void registerBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_registerBTNMouseClicked
+        String username = user.getText();
+        String password = pass.getText();
+
+        // Add the entered username and password to the list of valid credentials
+        validCredentials.add(new Credential(username, password));
+        JOptionPane.showMessageDialog(null, "Account Registered.");
+    }//GEN-LAST:event_registerBTNMouseClicked
 
     /**
      * @param args the command line arguments
@@ -288,6 +317,6 @@ public class MainLogin extends javax.swing.JFrame {
     private javax.swing.JPanel loginBTN;
     private javax.swing.JTextField pass;
     private javax.swing.JLabel registerBTN;
-    private javax.swing.JTextField user;
+    public static javax.swing.JTextField user;
     // End of variables declaration//GEN-END:variables
 }
