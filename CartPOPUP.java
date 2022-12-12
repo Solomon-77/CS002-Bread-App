@@ -79,7 +79,7 @@ public class CartPOPUP extends javax.swing.JFrame {
         backBTN.setBounds(10, 10, 90, 25);
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { "aw", "2awaw", "waww", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });

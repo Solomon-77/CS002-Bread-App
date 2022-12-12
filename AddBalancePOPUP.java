@@ -15,7 +15,13 @@ public class AddBalancePOPUP extends javax.swing.JFrame {
     public AddBalancePOPUP() {
         initComponents();
     }
+    
+    public static float bal = 0;
 
+    public float addBal(float enteredBal) {
+    	bal += enteredBal;
+    	return bal;    	
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,6 +55,11 @@ public class AddBalancePOPUP extends javax.swing.JFrame {
         addBalance.setBackground(new java.awt.Color(187, 89, 26));
         addBalance.setForeground(new java.awt.Color(187, 89, 26));
         addBalance.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addBalance.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addBalanceMouseClicked(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setForeground(java.awt.Color.white);
@@ -125,9 +136,14 @@ public class AddBalancePOPUP extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBTNMouseClicked
-
         this.dispose();
     }//GEN-LAST:event_backBTNMouseClicked
+
+    private void addBalanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBalanceMouseClicked
+        float enteredBal = Float.parseFloat(jTextField1.getText());
+        addBal(enteredBal);
+        MenuScreen.totalBalance.setText("" + bal);
+    }//GEN-LAST:event_addBalanceMouseClicked
 
     /**
      * @param args the command line arguments
@@ -165,13 +181,13 @@ public class AddBalancePOPUP extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel addBalance;
+    public static javax.swing.JPanel addBalance;
     private javax.swing.JPanel backBTN;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
+    public static javax.swing.JTextField jTextField1;
     private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }
