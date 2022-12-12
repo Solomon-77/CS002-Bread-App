@@ -495,8 +495,9 @@ public class MenuScreen extends javax.swing.JFrame {
 
     private void logoutBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBTNMouseClicked
         MainLogin log = new MainLogin();
+        AddBalancePOPUP.bal = 0;
         log.show();
-        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_logoutBTNMouseClicked
 
     private void baguetteRBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_baguetteRBTNMouseClicked
