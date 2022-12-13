@@ -658,7 +658,7 @@ public class MenuScreen extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JPanel logOUT;
-    javax.swing.JLabel menuUSER;
+    public static javax.swing.JLabel menuUSER;
     private javax.swing.JSpinner sourdoughQTY;
     private javax.swing.JRadioButton sourdoughRBTN;
     private javax.swing.JLabel totalBALANCE;

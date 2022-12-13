@@ -8,6 +8,7 @@
  * @author Eustaquio
  */
 import javax.swing.*;
+import java.util.*;
 
 public class CheckOutScreen extends javax.swing.JFrame {
 
@@ -309,16 +310,43 @@ public class CheckOutScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_backBTNMouseClicked
 
     private void payBALANCEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_payBALANCEMouseClicked
-    
+
         if(AddBalancePOPUP.bal >= MenuScreen.totalAmount2 && MenuScreen.totalAmount2 != 0) {
             AddBalancePOPUP.bal = AddBalancePOPUP.bal - MenuScreen.totalAmount2;
-            MenuScreen.totalAmount2 = 0;
+            JOptionPane.showMessageDialog(this, "Payment Successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            receiptAREA.setEditable(false);
+            
+            //RECEIPT
+            Date thisDate = new Date();
+            receiptAREA.append("Receipt");
+            receiptAREA.append("\n----------------------------------------------------------------------------");
+            receiptAREA.append("\nDate:\t" + thisDate);
+            receiptAREA.append("\nName:\t" + MenuScreen.menuUSER.getText());
+            receiptAREA.append("\nBalance:\tP" + MenuScreen.totalBalance.getText());
+            receiptAREA.append("\n----------------------------------------------------------------------------");
+            receiptAREA.append("\nItems\tQuantity ");
+            receiptAREA.append("\nBaguette\t" + MenuScreen.qtyA2);
+            receiptAREA.append("\nCroissant\t" + MenuScreen.qtyB2);
+            receiptAREA.append("\nGold Leaf\t" + MenuScreen.qtyC2);
+            receiptAREA.append("\nSourDough\t" + MenuScreen.qtyD2);
             MenuScreen.qtyA2 = 0;
             MenuScreen.qtyB2 = 0;
             MenuScreen.qtyC2 = 0;
-            MenuScreen.qtyD2 = 0; 
+            MenuScreen.qtyD2 = 0;
+            receiptAREA.append("\n----------------------------------------------------------------------------");
+            receiptAREA.append("\nTotal Amount:\tP" + MenuScreen.totalAmount2);
+            if (addonMAYO.isSelected()) {
+                receiptAREA.append("\nAddons:\t" + addonMAYO.getText());
+            }
+            if (addonCHEESE.isSelected()) {
+                receiptAREA.append("\nAddons:\t" + addonCHEESE.getText());
+            }
+            MenuScreen.totalAmount2 = 0;
             totalAMOUNT.setText("" + MenuScreen.totalAmount2);
-            JOptionPane.showMessageDialog(this, "Payment Successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            receiptAREA.append("\nChange:\tP" + AddBalancePOPUP.bal);
+            
+            // -----------------------------------------------------------
+            
         } else if (AddBalancePOPUP.bal < MenuScreen.totalAmount2) {
             JOptionPane.showMessageDialog(this, "Insufficient Balance.", "Add Balance Needed", JOptionPane.ERROR_MESSAGE);
         } else if (MenuScreen.totalAmount2 == 0) {
@@ -333,6 +361,7 @@ public class CheckOutScreen extends javax.swing.JFrame {
             float total = (float) (MenuScreen.totalAmount2 * .10);
             MenuScreen.totalAmount2 -= total;
             totalAMOUNT.setText("" + MenuScreen.totalAmount2);
+            JOptionPane.showMessageDialog(this, "Voucher Applied Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jPanel4MouseClicked
 
@@ -390,7 +419,7 @@ public class CheckOutScreen extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JPanel payBALANCE;
     private javax.swing.JLabel payLabel;
-    private javax.swing.JTextArea receiptAREA;
+    public static javax.swing.JTextArea receiptAREA;
     public static javax.swing.JLabel totalAMOUNT;
     private javax.swing.JTextField voucherCODE;
     // End of variables declaration//GEN-END:variables
