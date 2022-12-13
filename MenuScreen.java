@@ -1,49 +1,6 @@
+import javax.swing.*;
 
-import javax.swing.ButtonGroup;
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
-
-/**
- *
- * @author Eustaquio
- */
 public class MenuScreen extends javax.swing.JFrame {
-
-    
-    public void baggueteEnable(){
-        baguetteQTY.setEnabled(true);
-    }
-    
-    public void croissantEnable(){
-        croissantQTY.setEnabled(true);
-    }
-    
-    public void goldleafEnable(){
-        goldleafQTY.setEnabled(true);
-    }
-    public void sourdoughEnable(){
-        sourdoughQTY.setEnabled(true);
-    }
-    
-    //Disable
-    public void baggueteDisable(){
-        baguetteQTY.setEnabled(false);
-    }
-    
-    public void croissantDisable(){
-        croissantQTY.setEnabled(false);
-    }
-    
-    public void goldleafDisable(){
-        goldleafQTY.setEnabled(false);
-    }
-    public void sourdoughDisable(){
-        sourdoughQTY.setEnabled(false);
-    }
-
     /**
      * Creates new form MainLogin
      */
@@ -77,7 +34,7 @@ public class MenuScreen extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        logoutBTN = new javax.swing.JPanel();
+        addCart = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         baguetteQTY = new javax.swing.JSpinner();
         croissantQTY = new javax.swing.JSpinner();
@@ -92,14 +49,16 @@ public class MenuScreen extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         totalBALANCE = new javax.swing.JLabel();
         totalBalance = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        addBalanceSCREEN = new javax.swing.JPanel();
+        welcome = new javax.swing.JLabel();
+        logOUT = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         cartBTN = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         checkoutBTN = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         menuUSER = new javax.swing.JLabel();
+        addBalanceSCREEN1 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
 
         jToggleButton1.setText("jToggleButton1");
 
@@ -218,39 +177,44 @@ public class MenuScreen extends javax.swing.JFrame {
         jPanel2.add(jLabel12);
         jLabel12.setBounds(40, 230, 150, 90);
 
-        logoutBTN.setBackground(new java.awt.Color(187, 89, 26));
-        logoutBTN.setForeground(new java.awt.Color(187, 89, 26));
-        logoutBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        logoutBTN.addMouseListener(new java.awt.event.MouseAdapter() {
+        addCart.setBackground(new java.awt.Color(187, 89, 26));
+        addCart.setForeground(new java.awt.Color(187, 89, 26));
+        addCart.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addCart.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                logoutBTNMouseClicked(evt);
+                addCartMouseClicked(evt);
             }
         });
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setForeground(java.awt.Color.white);
-        jLabel8.setText("LOGOUT");
+        jLabel8.setText("ADD CART");
 
-        javax.swing.GroupLayout logoutBTNLayout = new javax.swing.GroupLayout(logoutBTN);
-        logoutBTN.setLayout(logoutBTNLayout);
-        logoutBTNLayout.setHorizontalGroup(
-            logoutBTNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(logoutBTNLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+        javax.swing.GroupLayout addCartLayout = new javax.swing.GroupLayout(addCart);
+        addCart.setLayout(addCartLayout);
+        addCartLayout.setHorizontalGroup(
+            addCartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addCartLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
                 .addComponent(jLabel8)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
-        logoutBTNLayout.setVerticalGroup(
-            logoutBTNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        addCartLayout.setVerticalGroup(
+            addCartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        jPanel2.add(logoutBTN);
-        logoutBTN.setBounds(270, 30, 100, 30);
+        jPanel2.add(addCart);
+        addCart.setBounds(270, 30, 100, 30);
 
         baguetteQTY.setModel(new javax.swing.SpinnerNumberModel(0, 0, 50, 1));
         baguetteQTY.setBorder(null);
         baguetteQTY.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        baguetteQTY.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                baguetteQTYMouseClicked(evt);
+            }
+        });
         jPanel2.add(baguetteQTY);
         baguetteQTY.setBounds(140, 180, 50, 30);
 
@@ -321,7 +285,7 @@ public class MenuScreen extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(totalBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -335,34 +299,34 @@ public class MenuScreen extends javax.swing.JFrame {
                 .addGap(12, 12, 12))
         );
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(java.awt.Color.black);
-        jLabel3.setText("Welcome");
+        welcome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        welcome.setForeground(java.awt.Color.black);
+        welcome.setText("Welcome");
 
-        addBalanceSCREEN.setBackground(new java.awt.Color(187, 89, 26));
-        addBalanceSCREEN.setForeground(new java.awt.Color(187, 89, 26));
-        addBalanceSCREEN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        addBalanceSCREEN.addMouseListener(new java.awt.event.MouseAdapter() {
+        logOUT.setBackground(new java.awt.Color(187, 89, 26));
+        logOUT.setForeground(new java.awt.Color(187, 89, 26));
+        logOUT.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        logOUT.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addBalanceSCREENMouseClicked(evt);
+                logOUTMouseClicked(evt);
             }
         });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(java.awt.Color.white);
-        jLabel4.setText("ADD BALANCE");
+        jLabel4.setText("LOG OUT");
 
-        javax.swing.GroupLayout addBalanceSCREENLayout = new javax.swing.GroupLayout(addBalanceSCREEN);
-        addBalanceSCREEN.setLayout(addBalanceSCREENLayout);
-        addBalanceSCREENLayout.setHorizontalGroup(
-            addBalanceSCREENLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addBalanceSCREENLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
+        javax.swing.GroupLayout logOUTLayout = new javax.swing.GroupLayout(logOUT);
+        logOUT.setLayout(logOUTLayout);
+        logOUTLayout.setHorizontalGroup(
+            logOUTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(logOUTLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
                 .addComponent(jLabel4)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        addBalanceSCREENLayout.setVerticalGroup(
-            addBalanceSCREENLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        logOUTLayout.setVerticalGroup(
+            logOUTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
         );
 
@@ -377,16 +341,16 @@ public class MenuScreen extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel5.setForeground(java.awt.Color.white);
-        jLabel5.setText("CART");
+        jLabel5.setText("CART / RESET");
 
         javax.swing.GroupLayout cartBTNLayout = new javax.swing.GroupLayout(cartBTN);
         cartBTN.setLayout(cartBTNLayout);
         cartBTNLayout.setHorizontalGroup(
             cartBTNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cartBTNLayout.createSequentialGroup()
-                .addContainerGap(48, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(45, 45, 45))
+            .addGroup(cartBTNLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(15, 15, 15))
         );
         cartBTNLayout.setVerticalGroup(
             cartBTNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -424,6 +388,33 @@ public class MenuScreen extends javax.swing.JFrame {
         menuUSER.setForeground(new java.awt.Color(40, 40, 61));
         menuUSER.setText(MainLogin.user.getText());
 
+        addBalanceSCREEN1.setBackground(new java.awt.Color(187, 89, 26));
+        addBalanceSCREEN1.setForeground(new java.awt.Color(187, 89, 26));
+        addBalanceSCREEN1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addBalanceSCREEN1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addBalanceSCREEN1MouseClicked(evt);
+            }
+        });
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel16.setForeground(java.awt.Color.white);
+        jLabel16.setText("ADD BALANCE");
+
+        javax.swing.GroupLayout addBalanceSCREEN1Layout = new javax.swing.GroupLayout(addBalanceSCREEN1);
+        addBalanceSCREEN1.setLayout(addBalanceSCREEN1Layout);
+        addBalanceSCREEN1Layout.setHorizontalGroup(
+            addBalanceSCREEN1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addBalanceSCREEN1Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel16)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        addBalanceSCREEN1Layout.setVerticalGroup(
+            addBalanceSCREEN1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -432,16 +423,17 @@ public class MenuScreen extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(29, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(welcome, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addComponent(menuUSER, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addContainerGap())
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(addBalanceSCREEN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(checkoutBTN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(cartBTN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(checkoutBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cartBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(addBalanceSCREEN1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(logOUT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGap(28, 28, 28)))))
         );
         jPanel3Layout.setVerticalGroup(
@@ -449,11 +441,13 @@ public class MenuScreen extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(welcome, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(menuUSER)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
-                .addComponent(addBalanceSCREEN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(logOUT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(addBalanceSCREEN1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(cartBTN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -489,56 +483,112 @@ public class MenuScreen extends javax.swing.JFrame {
         check.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_checkoutBTNMouseClicked
-
-    private void logoutBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBTNMouseClicked
-        MainLogin log = new MainLogin();
-        AddBalancePOPUP.bal = 0;
-        log.show();
-        this.dispose();
-    }//GEN-LAST:event_logoutBTNMouseClicked
+    float totA = 0;
+    float totB = 0;
+    float totC = 0;
+    float totD = 0;
+    float totalAmount = 0;
+    public static float totalAmount2 = 0;
+    int baguette = 100;
+    int croissant = 98;
+    int goldLeaf = 450;
+    int sourDough = 75;
+    
+    int qtyA = 0;
+    public static int qtyA2 = 0;
+    int qtyB = 0;
+    public static int qtyB2 = 0;
+    int qtyC = 0;
+    public static int qtyC2 = 0;
+    int qtyD = 0;
+    public static int qtyD2 = 0;
+    
+    private void addCartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartMouseClicked
+        int value = (Integer) baguetteQTY.getValue();
+        int value2 = (Integer) croissantQTY.getValue();
+        int value3 = (Integer) goldleafQTY.getValue();
+        int value4 = (Integer) sourdoughQTY.getValue();
+        
+        if (value > 0 || value2 > 0 || value3 > 0 || value4 > 0){
+            JOptionPane.showMessageDialog(null, "Successfully added to cart.");
+        } else {
+            JOptionPane.showMessageDialog(null, "Please select your bread option.");
+        }
+        
+        qtyA = value;
+        qtyA2 += qtyA;
+        qtyB = value2;
+        qtyB2 += qtyB;
+        qtyC = value3;
+        qtyC2 += qtyC;
+        qtyD = value4;
+        qtyD2 += qtyD;
+        
+        totA = baguette * value;
+        totB = croissant * value2;
+        totC = goldLeaf * value3;
+        totD = sourDough * value4;
+        totalAmount = totA + totB + totC + totD;
+        totalAmount2 += totalAmount;
+    }//GEN-LAST:event_addCartMouseClicked
 
     private void baguetteRBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_baguetteRBTNMouseClicked
         if (baguetteRBTN.isSelected()){
-            baggueteEnable();
+            baguetteQTY.setEnabled(true);
         } else {
-            baggueteDisable();
+            baguetteQTY.setEnabled(false);
         }
-       
     }//GEN-LAST:event_baguetteRBTNMouseClicked
 
     private void goldleafRBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_goldleafRBTNMouseClicked
         if (goldleafRBTN.isSelected()){
-            goldleafEnable();
+            goldleafQTY.setEnabled(true);
         } else {
-            goldleafDisable();
+            goldleafQTY.setEnabled(false);
         }
     }//GEN-LAST:event_goldleafRBTNMouseClicked
 
     private void sourdoughRBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sourdoughRBTNMouseClicked
         if (sourdoughRBTN.isSelected()){
-            sourdoughEnable();
+            sourdoughQTY.setEnabled(true);
         } else {
-            sourdoughDisable();
+            sourdoughQTY.setEnabled(false);
         }
     }//GEN-LAST:event_sourdoughRBTNMouseClicked
 
     private void croissantRBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_croissantRBTNMouseClicked
         if (croissantRBTN.isSelected()){
-            croissantEnable();
+            croissantQTY.setEnabled(true);
         } else {
-            croissantDisable();
+            croissantQTY.setEnabled(false);
         }
     }//GEN-LAST:event_croissantRBTNMouseClicked
 
-    private void addBalanceSCREENMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBalanceSCREENMouseClicked
-        AddBalancePOPUP add = new AddBalancePOPUP();
-        add.setVisible(true);
-    }//GEN-LAST:event_addBalanceSCREENMouseClicked
+    private void logOUTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOUTMouseClicked
+        MainLogin main = new MainLogin();
+        main.show();
+        AddBalancePOPUP.bal = 0;
+        totalAmount2 = 0;
+        qtyA2 = 0;
+        qtyB2 = 0;
+        qtyC2 = 0;
+        qtyD2 = 0;
+        this.dispose();
+    }//GEN-LAST:event_logOUTMouseClicked
 
     private void cartBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartBTNMouseClicked
         CartPOPUP cart = new CartPOPUP();
         cart.show();
     }//GEN-LAST:event_cartBTNMouseClicked
+  
+    private void baguetteQTYMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_baguetteQTYMouseClicked
+
+    }//GEN-LAST:event_baguetteQTYMouseClicked
+
+    private void addBalanceSCREEN1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBalanceSCREEN1MouseClicked
+        AddBalancePOPUP add = new AddBalancePOPUP();
+        add.setVisible(true);
+    }//GEN-LAST:event_addBalanceSCREEN1MouseClicked
     
     /**
      * @param args the command line arguments
@@ -576,7 +626,8 @@ public class MenuScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel addBalanceSCREEN;
+    private javax.swing.JPanel addBalanceSCREEN1;
+    private javax.swing.JPanel addCart;
     private javax.swing.JSpinner baguetteQTY;
     private javax.swing.JRadioButton baguetteRBTN;
     private javax.swing.JPanel cartBTN;
@@ -593,8 +644,8 @@ public class MenuScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -606,12 +657,13 @@ public class MenuScreen extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JPanel logoutBTN;
+    private javax.swing.JPanel logOUT;
     javax.swing.JLabel menuUSER;
     private javax.swing.JSpinner sourdoughQTY;
     private javax.swing.JRadioButton sourdoughRBTN;
     private javax.swing.JLabel totalBALANCE;
     public static javax.swing.JLabel totalBalance;
+    private javax.swing.JLabel welcome;
     // End of variables declaration//GEN-END:variables
 
     

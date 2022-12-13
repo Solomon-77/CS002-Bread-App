@@ -7,6 +7,8 @@
  *
  * @author Eustaquio
  */
+import javax.swing.*;
+
 public class AddBalancePOPUP extends javax.swing.JFrame {
 
     /**
@@ -20,7 +22,7 @@ public class AddBalancePOPUP extends javax.swing.JFrame {
 
     public float addBal(float enteredBal) {
     	bal += enteredBal;
-    	return bal;    	
+    	return bal;  	
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -143,6 +145,7 @@ public class AddBalancePOPUP extends javax.swing.JFrame {
         float enteredBal = Float.parseFloat(jTextField1.getText());
         addBal(enteredBal);
         MenuScreen.totalBalance.setText("" + bal);
+        JOptionPane.showMessageDialog(this, "Added Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_addBalanceMouseClicked
 
     /**

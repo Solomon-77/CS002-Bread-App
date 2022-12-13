@@ -7,7 +7,13 @@
  *
  * @author Eustaquio
  */
+import javax.swing.*;
+
 public class CheckOutScreen extends javax.swing.JFrame {
+
+    static void setText(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
     /**
      * Creates new form MainLogin
@@ -35,6 +41,8 @@ public class CheckOutScreen extends javax.swing.JFrame {
         addonMAYO = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         backBTN = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -43,6 +51,7 @@ public class CheckOutScreen extends javax.swing.JFrame {
         payLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        totalAMOUNT = new javax.swing.JLabel();
 
         jToggleButton1.setText("jToggleButton1");
 
@@ -112,10 +121,39 @@ public class CheckOutScreen extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setForeground(java.awt.Color.white);
-        jLabel5.setText("__________________");
+        jLabel5.setText("____________________");
         jLabel5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel2.add(jLabel5);
         jLabel5.setBounds(40, 50, 110, 16);
+
+        jPanel4.setBackground(new java.awt.Color(187, 89, 26));
+        jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel4MouseClicked(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Apply Voucher");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+        );
+
+        jPanel2.add(jPanel4);
+        jPanel4.setBounds(160, 40, 110, 20);
 
         jPanel3.setBackground(java.awt.Color.white);
 
@@ -182,20 +220,28 @@ public class CheckOutScreen extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(40, 40, 61));
-        jLabel3.setText("69,000");
+        jLabel3.setText("P");
+
+        totalAMOUNT.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        totalAMOUNT.setForeground(new java.awt.Color(40, 40, 61));
+        totalAMOUNT.setText("" + MenuScreen.totalAmount2);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(totalAMOUNT, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(totalAMOUNT, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -206,7 +252,7 @@ public class CheckOutScreen extends javax.swing.JFrame {
                 .addContainerGap(28, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(backBTN, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
                     .addComponent(payBALANCE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(28, 28, 28))
@@ -216,11 +262,11 @@ public class CheckOutScreen extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(backBTN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 171, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(39, 39, 39)
                 .addComponent(payBALANCE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
         );
@@ -263,8 +309,32 @@ public class CheckOutScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_backBTNMouseClicked
 
     private void payBALANCEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_payBALANCEMouseClicked
-        // TODO add your handling code here:
+    
+        if(AddBalancePOPUP.bal >= MenuScreen.totalAmount2 && MenuScreen.totalAmount2 != 0) {
+            AddBalancePOPUP.bal = AddBalancePOPUP.bal - MenuScreen.totalAmount2;
+            MenuScreen.totalAmount2 = 0;
+            MenuScreen.qtyA2 = 0;
+            MenuScreen.qtyB2 = 0;
+            MenuScreen.qtyC2 = 0;
+            MenuScreen.qtyD2 = 0; 
+            totalAMOUNT.setText("" + MenuScreen.totalAmount2);
+            JOptionPane.showMessageDialog(this, "Payment Successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        } else if (AddBalancePOPUP.bal < MenuScreen.totalAmount2) {
+            JOptionPane.showMessageDialog(this, "Insufficient Balance.", "Add Balance Needed", JOptionPane.ERROR_MESSAGE);
+        } else if (MenuScreen.totalAmount2 == 0) {
+            JOptionPane.showMessageDialog(this, "Select your bread option first.", "Add Cart Needed", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_payBALANCEMouseClicked
+    public static String[] voucherCodes = {"TIPSTUDENT", "NILASANTIAGO", "GROUP7"};
+    
+    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
+        String voucher = voucherCODE.getText();
+        if (voucher.equals(voucherCodes[0]) || voucher.equals(voucherCodes[1]) || voucher.equals(voucherCodes[2])) {
+            float total = (float) (MenuScreen.totalAmount2 * .10);
+            MenuScreen.totalAmount2 -= total;
+            totalAMOUNT.setText("" + MenuScreen.totalAmount2);
+        }
+    }//GEN-LAST:event_jPanel4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -311,14 +381,17 @@ public class CheckOutScreen extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JPanel payBALANCE;
     private javax.swing.JLabel payLabel;
     private javax.swing.JTextArea receiptAREA;
+    public static javax.swing.JLabel totalAMOUNT;
     private javax.swing.JTextField voucherCODE;
     // End of variables declaration//GEN-END:variables
 }
