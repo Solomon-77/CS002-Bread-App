@@ -201,7 +201,7 @@ public class MainLogin extends javax.swing.JFrame {
                 .addGap(60, 60, 60))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(89, 89, 89)
-                .addComponent(jLabel2)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -245,6 +245,9 @@ public class MainLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_passActionPerformed
 
+    String adminUser = "admin";
+    String adminPass = "admin";
+    
     private void loginBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBTNMouseClicked
         String username = user.getText();
         String password = pass.getText();
@@ -256,6 +259,11 @@ public class MainLogin extends javax.swing.JFrame {
                 menu.show();
                 this.setVisible(false);
             }
+        }
+        if (username.equals(adminUser) && password.equals(adminPass)) {
+            AdminScreen admin = new AdminScreen();
+            admin.show();
+            this.setVisible(false);
         }
     }//GEN-LAST:event_loginBTNMouseClicked
 

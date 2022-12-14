@@ -37,10 +37,10 @@ public class AddBalancePOPUP extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         addBalance = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        backBTN = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        menu = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
 
         jToggleButton1.setText("jToggleButton1");
 
@@ -72,9 +72,9 @@ public class AddBalancePOPUP extends javax.swing.JFrame {
         addBalanceLayout.setHorizontalGroup(
             addBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addBalanceLayout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(133, 133, 133)
                 .addComponent(jLabel7)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
         addBalanceLayout.setVerticalGroup(
             addBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -82,14 +82,22 @@ public class AddBalancePOPUP extends javax.swing.JFrame {
         );
 
         jPanel2.add(addBalance);
-        addBalance.setBounds(130, 130, 120, 25);
+        addBalance.setBounds(20, 120, 300, 25);
 
-        backBTN.setBackground(new java.awt.Color(187, 89, 26));
-        backBTN.setForeground(new java.awt.Color(187, 89, 26));
-        backBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        backBTN.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(java.awt.Color.white);
+        jLabel1.setText("Add Balance:");
+        jPanel2.add(jLabel1);
+        jLabel1.setBounds(20, 70, 90, 30);
+        jPanel2.add(jTextField1);
+        jTextField1.setBounds(120, 70, 200, 30);
+
+        menu.setBackground(new java.awt.Color(187, 89, 26));
+        menu.setForeground(new java.awt.Color(187, 89, 26));
+        menu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        menu.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                backBTNMouseClicked(evt);
+                menuMouseClicked(evt);
             }
         });
 
@@ -97,49 +105,37 @@ public class AddBalancePOPUP extends javax.swing.JFrame {
         jLabel4.setForeground(java.awt.Color.white);
         jLabel4.setText("MENU");
 
-        javax.swing.GroupLayout backBTNLayout = new javax.swing.GroupLayout(backBTN);
-        backBTN.setLayout(backBTNLayout);
-        backBTNLayout.setHorizontalGroup(
-            backBTNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backBTNLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
+        javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
+        menu.setLayout(menuLayout);
+        menuLayout.setHorizontalGroup(
+            menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
                 .addComponent(jLabel4)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
-        backBTNLayout.setVerticalGroup(
-            backBTNLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        menuLayout.setVerticalGroup(
+            menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
         );
 
-        jPanel2.add(backBTN);
-        backBTN.setBounds(10, 10, 90, 25);
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setForeground(java.awt.Color.white);
-        jLabel1.setText("Add Balance:");
-        jPanel2.add(jLabel1);
-        jLabel1.setBounds(50, 70, 90, 30);
-        jPanel2.add(jTextField1);
-        jTextField1.setBounds(150, 70, 200, 30);
+        jPanel2.add(menu);
+        menu.setBounds(20, 20, 100, 25);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 385, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 343, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void backBTNMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backBTNMouseClicked
-        this.dispose();
-    }//GEN-LAST:event_backBTNMouseClicked
 
     private void addBalanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBalanceMouseClicked
         float enteredBal = Float.parseFloat(jTextField1.getText());
@@ -147,6 +143,10 @@ public class AddBalancePOPUP extends javax.swing.JFrame {
         MenuScreen.totalBalance.setText("" + bal);
         JOptionPane.showMessageDialog(this, "Added Successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_addBalanceMouseClicked
+
+    private void menuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_menuMouseClicked
 
     /**
      * @param args the command line arguments
@@ -185,12 +185,12 @@ public class AddBalancePOPUP extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JPanel addBalance;
-    private javax.swing.JPanel backBTN;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     public static javax.swing.JTextField jTextField1;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JPanel menu;
     // End of variables declaration//GEN-END:variables
 }

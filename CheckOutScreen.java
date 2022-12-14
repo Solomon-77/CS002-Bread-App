@@ -316,7 +316,8 @@ public class CheckOutScreen extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Payment Successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
             receiptAREA.setEditable(false);
             
-            //RECEIPT
+            //-------------------------- receipt ------------------------------
+            
             Date thisDate = new Date();
             receiptAREA.append("Receipt");
             receiptAREA.append("\n----------------------------------------------------------------------------");
@@ -329,10 +330,6 @@ public class CheckOutScreen extends javax.swing.JFrame {
             receiptAREA.append("\nCroissant\t" + MenuScreen.qtyB2);
             receiptAREA.append("\nGold Leaf\t" + MenuScreen.qtyC2);
             receiptAREA.append("\nSourDough\t" + MenuScreen.qtyD2);
-            MenuScreen.qtyA2 = 0;
-            MenuScreen.qtyB2 = 0;
-            MenuScreen.qtyC2 = 0;
-            MenuScreen.qtyD2 = 0;
             receiptAREA.append("\n----------------------------------------------------------------------------");
             receiptAREA.append("\nTotal Amount:\tP" + MenuScreen.totalAmount2);
             if (addonMAYO.isSelected()) {
@@ -341,11 +338,17 @@ public class CheckOutScreen extends javax.swing.JFrame {
             if (addonCHEESE.isSelected()) {
                 receiptAREA.append("\nAddons:\t" + addonCHEESE.getText());
             }
-            MenuScreen.totalAmount2 = 0;
-            totalAMOUNT.setText("" + MenuScreen.totalAmount2);
             receiptAREA.append("\nChange:\tP" + AddBalancePOPUP.bal);
             
-            // -----------------------------------------------------------
+            // ---------------------- end of receipt -------------------------
+            
+            // set cart and total amount due to 0 after the result of receipt
+            MenuScreen.qtyA2 = 0;
+            MenuScreen.qtyB2 = 0;
+            MenuScreen.qtyC2 = 0;
+            MenuScreen.qtyD2 = 0;
+            MenuScreen.totalAmount2 = 0;
+            totalAMOUNT.setText("" + MenuScreen.totalAmount2);
             
         } else if (AddBalancePOPUP.bal < MenuScreen.totalAmount2) {
             JOptionPane.showMessageDialog(this, "Insufficient Balance.", "Add Balance Needed", JOptionPane.ERROR_MESSAGE);
