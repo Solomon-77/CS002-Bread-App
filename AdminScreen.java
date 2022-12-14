@@ -1,3 +1,17 @@
+
+import javax.swing.*;
+import java.util.*;
+import java.sql.SQLException;
+
+import javax.swing.table.DefaultTableModel;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -14,8 +28,15 @@ public class AdminScreen extends javax.swing.JFrame {
      */
     public AdminScreen() {
         initComponents();
+        Connect();
+        InitData();
+        Fetch();
     }
 
+    Connection con;
+    PreparedStatement pst;
+    ResultSet rs;
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -65,13 +86,13 @@ public class AdminScreen extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Transaction #", "Username", "Balance", "Items", "Quantity", "Total", "Change"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -126,7 +147,85 @@ public class AdminScreen extends javax.swing.JFrame {
         main.show();
         this.setVisible(false);
     }//GEN-LAST:event_jPanel3MouseClicked
+    
+    private void Connect() {
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            try {
+                con = DriverManager.getConnection("jdbc:mysql://localhost/bread_app","root","");
+            } catch (SQLException ex) {
+                Logger.getLogger(AdminScreen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(CheckOutScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void InitData() {
+    
+    try {
+    	
+        // DATABASE
+        String username = MenuScreen.menuUSER.getText();
+        String user_balance = "" + CheckOutScreen.total1;
+        String item = "bread";
+        int quantity = MenuScreen.totalQty;
+        String total_amount = "" + CheckOutScreen.totalAmount1;
+        String user_change = MenuScreen.totalBalance.getText();
+       
 
+        //projectdb
+    
+			pst = con.prepareStatement("INSERT INTO transaction_records (username,user_balance,item,quantity,total_amount,user_change)VALUES(?,?,?,?,?,?)");
+			pst.setString(1, username);
+			pst.setString(2, user_balance);
+			pst.setString(3, item);
+			pst.setInt(4, quantity);
+			pst.setString(5, total_amount);
+			pst.setString(6, user_change);
+			
+			int k = pst.executeUpdate();
+			Fetch();
+			
+		} catch (SQLException e) {
+			System.out.print("Something went wrong please try again later...");
+		}
+    }
+    
+     private void Fetch() {
+    	int q;
+    	try {
+			pst = con.prepareStatement("SELECT * FROM transaction_records");
+			rs = pst.executeQuery();
+			ResultSetMetaData rss = rs.getMetaData();
+			q = rss.getColumnCount();
+			
+			DefaultTableModel df = (DefaultTableModel)jTable1.getModel();
+			df.setRowCount(0);
+			
+			while (rs.next()) {
+				
+				Vector v2 = new Vector();
+				for (int a=1; a<=q; a++ ) {
+					v2.add(rs.getString("transaction_number"));
+					v2.add(rs.getString("username"));
+					v2.add(rs.getString("user_balance"));
+					v2.add(rs.getString("item"));
+					v2.add(rs.getString("quantity"));
+					v2.add(rs.getString("total_amount"));
+					v2.add(rs.getString("user_change"));
+				}
+				df.addRow(v2);
+				
+			}
+		} catch (SQLException ex) {
+			Logger.getLogger(CheckOutScreen.class.getName()).log(Level.SEVERE, null, ex);
+		}
+    	
+    }
+    
     /**
      * @param args the command line arguments
      */

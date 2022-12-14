@@ -489,6 +489,7 @@ public class MenuScreen extends javax.swing.JFrame {
     float totD = 0;
     float totalAmount = 0;
     public static float totalAmount2 = 0;
+    static int totalQty = 0;
     int baguette = 100;
     int croissant = 98;
     int goldLeaf = 450;
@@ -523,6 +524,8 @@ public class MenuScreen extends javax.swing.JFrame {
         qtyC2 += qtyC;
         qtyD = value4;
         qtyD2 += qtyD;
+        
+        totalQty = qtyA2 + qtyB2 + qtyC2 + qtyD2;
         
         totA = baguette * value;
         totB = croissant * value2;

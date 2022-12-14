@@ -308,7 +308,9 @@ public class CheckOutScreen extends javax.swing.JFrame {
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_backBTNMouseClicked
-
+    public static float total1;
+    public static float totalAmount1;
+    
     private void payBALANCEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_payBALANCEMouseClicked
 
         if(AddBalancePOPUP.bal >= MenuScreen.totalAmount2 && MenuScreen.totalAmount2 != 0) {
@@ -340,6 +342,8 @@ public class CheckOutScreen extends javax.swing.JFrame {
             }
             receiptAREA.append("\nChange:\tP" + AddBalancePOPUP.bal);
             
+            total1 = MenuScreen.totalAmount2 + AddBalancePOPUP.bal;
+            totalAmount1 = MenuScreen.totalAmount2;
             // ---------------------- end of receipt -------------------------
             
             // set cart and total amount due to 0 after the result of receipt
@@ -348,7 +352,7 @@ public class CheckOutScreen extends javax.swing.JFrame {
             MenuScreen.qtyC2 = 0;
             MenuScreen.qtyD2 = 0;
             MenuScreen.totalAmount2 = 0;
-            totalAMOUNT.setText("" + MenuScreen.totalAmount2);
+            CheckOutScreen.totalAMOUNT.setText("" + MenuScreen.totalAmount2);
             
         } else if (AddBalancePOPUP.bal < MenuScreen.totalAmount2) {
             JOptionPane.showMessageDialog(this, "Insufficient Balance.", "Add Balance Needed", JOptionPane.ERROR_MESSAGE);
